@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotSelectableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
@@ -27,17 +28,19 @@ public class webapp_autotest {
 	
 	
     public static void main(String[] args) throws InterruptedException, AWTException {
-    	String Driver_path= args[0];
+    	if (args.length>0){
+    		String Driver_path= args[0];
+    	
         // declaration and instantiation of objects/variables
         //System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
-        //System.setProperty("webdriver.firefox.bin", "C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+        //For the virtual C:\\Program Files\\Mozilla Firefox\\firefox.exe");
         System.setProperty("webdriver.chrome.driver", Driver_path);
 
         //WebDriver driver = (WebDriver) new FirefoxDriver();
         WebDriver driver = new ChromeDriver();
         // Launch website
         // driver.navigate().to("http://www.baidu.com/");
-        driver.get("http://madoor.tech:3000/");
+        driver.get("https://madoor.ca:2083/");
         //driver.get("http://madoor.ca");
         
         
@@ -46,16 +49,30 @@ public class webapp_autotest {
 
         System.out.println("Test start \nThe web title is => " + titile);
        
-
-        HomePage.test(driver);
-        SignIn.test(driver);
+        try {
+        	HomePage.test(driver);
+        	//SignIn.test(driver);
+        } catch(Exception e){
+        	e.printStackTrace();	
+        }
+        
+        try {
+        	
+        	SignIn.test(driver);
+        } catch(Exception e){
+        	e.printStackTrace();	
+        }
+        
+        
+        
+        
         //the sign in in madoor.tech:3000 is temporarily disabled.
 //        HighSchoolStudent.test(driver);
 //        ChangeProfile.HighSchoolStudent(driver);
 //        UniversityStar.test(driver);
 //        ChangeProfile.UniversityStar(driver);
         
-
+       
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -64,6 +81,9 @@ public class webapp_autotest {
         }
         //driver.quit();
         driver.close();
+    	}else {
+    		System.out.println("Please enter parameters");
+    	}
         System.out.println("The Test is finished");
      
         System.exit(0);

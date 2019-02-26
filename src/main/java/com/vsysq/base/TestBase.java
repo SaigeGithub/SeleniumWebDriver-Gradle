@@ -16,10 +16,10 @@ public class TestBase {
         return driver;
     }
 
-    private void setDriver(String browserType, String appURL) {
+    private void setDriver(String browserType, String appURL, String OS) {
         switch (browserType) {
             case "chrome":
-                driver = initChromeDriver(appURL);
+                driver = initChromeDriver(appURL,OS);
                 break;
             case "firefox":
                 driver = initFirefoxDriver(appURL);
@@ -30,9 +30,14 @@ public class TestBase {
         }
     }
 
-    private static WebDriver initChromeDriver(String appURL) {
+    private static WebDriver initChromeDriver(String appURL, String OS) {
         System.out.println("Launching google chrome with new profile..");
-        System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver");
+        if(OS.equals("MacOS"))
+            System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver");
+        if(OS.equals("Windows"))
+            System.setProperty("webdriver.chrome.driver", driverPath + "C://Windows/chromedriver.exe");
+        if(OS.equals("Linux"))
+            System.setProperty("webdriver.chrome.driver", driverPath + "/usr/bin/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.navigate().to(appURL);
@@ -47,11 +52,11 @@ public class TestBase {
         return driver;
     }
 
-    @Parameters({ "browserType", "appURL" })
+    @Parameters({ "browserType", "appURL" ,"OS"})
     @BeforeClass
-    public void initializeTestBaseSetup(String browserType, String appURL) {
+    public void initializeTestBaseSetup(String browserType, String appURL, String OS) {
         try {
-            setDriver(browserType, appURL);
+            setDriver(browserType, appURL, OS);
 
         } catch (Exception e) {
             System.out.println("Error....." + e.getStackTrace());

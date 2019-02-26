@@ -5,7 +5,7 @@
       
       <listener class-name="com.vsysq.base.TestListener" />
    </listeners>
-
+   <parameter name="OS" value="MacOS" />
    <parameter name="browserType" value="chrome" />
    <parameter name="appURL" value="https://madoor.site:2083" />
 

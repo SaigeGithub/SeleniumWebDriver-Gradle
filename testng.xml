@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test Suite" verbose="1">
+   <listeners>
+      //listen to all the test being excuted and send data to extentreport
+      <listener class-name="com.vsysq.base.TestListener" />
+   </listeners>
+   //parameter that put into each test
+   <parameter name="browserType" value="chrome" />
+   <parameter name="appURL" value="https://madoor.site:2083" />
+
+   <test name="Admin Tests">
+      <classes>
+         <!--<class name="com.tests.BasePageTest" />-->
+         <class name="com.tests.SignInPageTest" />
+         <!--<class name="com.tests.CreateAccountTest" />-->
+      </classes>
+   </test>
+</suite>

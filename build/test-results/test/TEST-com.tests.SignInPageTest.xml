@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tests.SignInPageTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-02-25T23:30:03" hostname="NiniPrincessdeMacBook-Pro.local" time="16.085">
+  <properties/>
+  <testcase name="verifyForgotPassword" classname="com.tests.SignInPageTest" time="5.172"/>
+  <testcase name="verifySignInFunction" classname="com.tests.SignInPageTest" time="10.903"/>
+  <system-out><![CDATA[Launching google chrome with new profile..
+*** Running test method verifyForgotPassword...
+Directory already exists: /Users/nini/Development/Gradle_Automation/TestReport
+clicking on sign in button
+*** Executed verifyForgotPassword test successfully...
+*** Running test method verifySignInFunction...
+Sign In functionality details...
+clicking on sign in button
+clicking on sign in button
+clicking on sign in button
+*** Executed verifySignInFunction test successfully...
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38) on port 49020
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Feb 25, 2019 3:30:02 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+]]></system-err>
+</testsuite>

@@ -14,6 +14,9 @@
          <class name="com.tests.BasePageTest" />
          <class name="com.tests.SignInPageTest" />
          <class name="com.tests.CreateAccountTest" />
+         <class name="com.tests.TermsPageTest"/>
+         <class name="com.tests.UniversityStarPageTest"/>
+         <class name="com.tests.HighSchoolStudentPageTest"/>
       </classes>
    </test>
 </suite>

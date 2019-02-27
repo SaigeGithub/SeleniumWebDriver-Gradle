@@ -53,6 +53,11 @@ public class SignInPage {
     }
 
     public boolean verifySignIn(String username, String password) {
+        SignIn(username,password);
+        return getErrorMessage().contains("invalid");
+    }
+
+    public void SignIn(String username,String password){
         enterUserName(username);
         enterPassword(password);
         clickOnSignIn();
@@ -61,7 +66,30 @@ public class SignInPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return getErrorMessage().contains("invalid");
+    }
+
+    public UniversityStarPage SignInUstar(String username,String password){
+        enterUserName(username);
+        enterPassword(password);
+        clickOnSignIn();
+        try {
+            sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return new UniversityStarPage(driver);
+    }
+
+    public HighSchoolStudentPage SignInHStudent(String username,String password){
+        enterUserName(username);
+        enterPassword(password);
+        clickOnSignIn();
+        try {
+            sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return new HighSchoolStudentPage(driver);
     }
 
     public void enterUserName(String userName) {

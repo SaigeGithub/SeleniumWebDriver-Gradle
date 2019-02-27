@@ -5,5 +5,6 @@ To Use this selenium tool, you will need to do the following setups
 4. Go to the testng.xml file, change the parameter OS to one of the following "MacOS" "Windows" "Linux", if the testing URL changed, change the value of appURL.
 5. In the commond line, if you install gradle you do "gradle build" and if you want to run it again, do "gradle clean build"
    If the commond below does not work, try "./gradlew build" "gradlew build"
+6. if you want to run a single test, please type for example "gradle test --tests *UniversityStarPageTest" , replace the test name to get desired results.
 
 

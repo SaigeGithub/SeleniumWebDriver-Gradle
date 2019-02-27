@@ -80,4 +80,13 @@ public class BasePage {
             System.out.println("Sign up not found");
         return new CreateAccountPage(driver);
     }
+
+    public TermsPage clickTerms(){
+        WebElement element=driver.findElement(TermsButton);
+        if(element.isDisplayed()||element.isEnabled())
+            element.click();
+        return new TermsPage(driver);
+    }
+
+
 }

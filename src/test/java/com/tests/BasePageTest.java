@@ -52,10 +52,10 @@ public class BasePageTest extends TestBase {
 //        ExtentTestManager.getTest().log(Status.INFO, "Hey im in base test2 2");
 //    }
 //
-    @Test
-    public void HomePageButtonClickable() {
-        ExtentTestManager.getTest().log(Status.INFO, "Hellooo started HomePageButtonTest");
-
-    }
+//    @Test
+//    public void HomePageButtonClickable() {
+//        ExtentTestManager.getTest().log(Status.INFO, "Hellooo started HomePageButtonTest");
+//
+//    }
 
 }

@@ -13,7 +13,7 @@
       <classes>
          <class name="com.tests.BasePageTest" />
          <class name="com.tests.SignInPageTest" />
-         <!--<class name="com.tests.CreateAccountTest" />-->
+         <class name="com.tests.CreateAccountTest" />
       </classes>
    </test>
 </suite>

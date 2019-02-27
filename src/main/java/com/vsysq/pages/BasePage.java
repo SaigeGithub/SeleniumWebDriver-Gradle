@@ -15,10 +15,10 @@ public class BasePage {
     private By ContinueButton =By.xpath("//*[@id=\"root\"]/header/ul/li[3]/a/span");
     private By signupButton =By.linkText("Sign up");
     private By GetStartedButton=By.xpath("//*[@id=\"root\"]/div/div/main/section[1]/button/span");
-//    private By HomeButton
-//    private By TermsButton
-//    private By FAQButton
-//    private By PrivacyPolicyButton
+    private By HomeButton =By.xpath("//*[@id=\"root\"]/div/div/footer/div/div[2]/ul/li[1]/a/span");
+    private By TermsButton=By.xpath("//*[@id=\"root\"]/div/div/footer/div/div[2]/ul/li[3]/a/span");
+    private By FAQButton=By.xpath("//*[@id=\"root\"]/div/div/footer/div/div[2]/ul/li[4]/a/span");
+    private By PrivacyPolicyButton=By.xpath("//*[@id=\"root\"]/div/div/footer/div/div[2]/ul/li[2]/a/span");
 
 
     public BasePage(WebDriver driver) {
@@ -36,10 +36,6 @@ public class BasePage {
         return new SignInPage(driver);
     }
 
-    public void clickImagesLink() {
-        // It should have a logic to click on images link
-        // And it should navigate to google images page
-    }
 
     public boolean verifyWhatWeDo (){
         System.out.println("Test What we do");
@@ -76,7 +72,12 @@ public class BasePage {
         driver.navigate().back();
     }
 
-    public void ButtonClickable(){
-
+    public CreateAccountPage clickSignUp(){
+        WebElement SignUp= driver.findElement(signupButton);
+        if (SignUp.isDisplayed()|| SignUp.isEnabled())
+            SignUp.click();
+        else
+            System.out.println("Sign up not found");
+        return new CreateAccountPage(driver);
     }
 }

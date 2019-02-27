@@ -33,6 +33,7 @@ public class SignInPageTest extends TestBase {
         String username ="info@madoor.com";
         String password ="1234567";
         Assert.assertTrue(signInPage.verifySignIn(username,password), "Unable to sign in");
+
         ExtentTestManager.getTest().createNode("Verify Wechat");
         Assert.assertTrue(signInPage.verifyWechat(), "Unable to use wechat login");
         basePage.GoBack();

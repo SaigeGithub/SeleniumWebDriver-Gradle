@@ -121,18 +121,22 @@ public class SignInPage {
         if(ForgotBtn.isDisplayed() && ForgotBtn.isEnabled()){
             ForgotBtn.click();
         }
+
         try {
             sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         if(ForgotSend.isDisplayed())
             ForgotSend.sendKeys(email);
+
         try {
             sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         if(ForgotSubmit.isDisplayed())
             ForgotSubmit.click();
         try {

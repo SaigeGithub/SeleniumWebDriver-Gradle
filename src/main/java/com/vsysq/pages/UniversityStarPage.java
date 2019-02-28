@@ -13,7 +13,7 @@ public class UniversityStarPage {
     private By subscription = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[1]/a[1]/div/div[2]/span");
     private By favorites = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[1]/a[3]/div/div[2]/span");
     private By allposts = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[2]/a[1]/div/div[2]/span");
-    private By createnewpost = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[2]/a[2]/div/div[2]/span");
+    private By createNewPost = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[2]/a[2]/div/div[2]/span");
     private By draft = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[3]/a[1]/div/div[2]/span");
     private By schedule = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[3]/a[2]/div/div[2]/span");
     private By appointment = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[3]/a[2]/div/div[2]/span");
@@ -51,6 +51,14 @@ public class UniversityStarPage {
         if(getTitle().contains("Profile"))
             return  true;
         return false;
+    }
+
+    public CreateNewPostPage clickNewPost(){
+        WebElement element = driver.findElement(createNewPost);
+        if (element.isEnabled()){
+            element.click();
+        }
+        return new CreateNewPostPage(driver);
     }
 
 }

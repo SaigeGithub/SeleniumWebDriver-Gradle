@@ -17,6 +17,8 @@
          <class name="com.tests.TermsPageTest"/>
          <class name="com.tests.UniversityStarPageTest"/>
          <class name="com.tests.HighSchoolStudentPageTest"/>
+         <class name="com.tests.UniProfilePageTest" />
+         <class name="com.tests.HighProfilePageTest" />
       </classes>
    </test>
 </suite>

@@ -24,6 +24,10 @@ public class HighSchoolStudentPage {
         }
 
     }
+
+    public HighProfilePage GetProfile() {
+        return new HighProfilePage(driver);
+    }
     public String getTitle(){
         WebElement element=driver.findElement(title);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);

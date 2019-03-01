@@ -48,5 +48,4 @@ test{
 		suites 'testng.xml'
 	}
 }
-// Define the main class for the application
-mainClassName = 'com.automation.page.webapp_autotest'
+

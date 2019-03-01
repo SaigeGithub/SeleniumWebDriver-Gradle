@@ -1,5 +1,6 @@
 package com.tests;
 
+import com.aventstack.extentreports.Status;
 import com.vsysq.base.ExtentManager;
 import com.vsysq.base.ExtentTestManager;
 import com.vsysq.pages.TermsPage;
@@ -28,16 +29,19 @@ public class TermsPageTest extends TestBase{
     public void verifyTermPage(){
         basePage = new BasePage(driver);
         termsPage = basePage.clickTerms();
-        ExtentTestManager.getTest().createNode("checking high school");
+        ExtentTestManager.getTest().log(Status.INFO, "check the high school student agreement");
         Assert.assertTrue(termsPage.verifyHighSchool(), "high school doesn't match");
-        ExtentTestManager.getTest().createNode("checking university");
+
         termsPage.clickUniversity();
+        ExtentTestManager.getTest().log(Status.INFO, "Check the University student agreement");
         Assert.assertTrue(termsPage.verifyUniversity(), "university doesn't match");
-        ExtentTestManager.getTest().createNode("checking privacy policy");
+
         termsPage.clickPrivacyPolicy();
+        ExtentTestManager.getTest().log(Status.INFO, "Check the privacy policy");
         Assert.assertTrue(termsPage.verifyPrivacyPolicy(), "bad privacy policy");
-        ExtentTestManager.getTest().createNode("Checking privacy Agreement");
+
         termsPage.clickPrivateAgr();
+        ExtentTestManager.getTest().log(Status.INFO, "Check the privacy agreement");
         Assert.assertTrue(termsPage.verifyPrivacyAgr(), "bad privacy agreement");
     }
 

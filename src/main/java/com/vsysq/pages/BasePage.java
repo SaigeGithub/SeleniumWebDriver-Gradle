@@ -87,6 +87,12 @@ public class BasePage {
             element.click();
         return new TermsPage(driver);
     }
-
+    public void wait100(){
+        try {
+            sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

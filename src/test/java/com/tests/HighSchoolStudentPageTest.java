@@ -1,5 +1,6 @@
 package com.tests;
 
+import com.aventstack.extentreports.Status;
 import com.vsysq.base.ExtentTestManager;
 import com.vsysq.base.TestBase;
 import com.vsysq.pages.BasePage;
@@ -28,10 +29,11 @@ public class HighSchoolStudentPageTest extends TestBase {
         System.out.println("Sign In functionality details...");
         basePage = new BasePage(driver);
         signInPage = basePage.clickSignInBtn();
-        ExtentTestManager.getTest().createNode("Sign in with wrong password");
+
         String username = "info.madoor@gmail.com";
         String password = "Madoor107!";
         Hpage = signInPage.SignInHStudent(username,password);
+        ExtentTestManager.getTest().log(Status.INFO, "Sign in as high school student");
         Assert.assertTrue(Hpage.verifyProfile(), "Unable to sign in");
 
 

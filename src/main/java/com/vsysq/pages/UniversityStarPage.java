@@ -13,7 +13,7 @@ public class UniversityStarPage {
     private By subscription = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[1]/a[1]/div/div[2]/span");
     private By favorites = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[1]/a[3]/div/div[2]/span");
     private By allposts = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[2]/a[1]/div/div[2]/span");
-    private By createNewPost = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[2]/a[2]/div/div[2]/span");
+    private By createnewpost = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[2]/a[2]/div/div[2]/span");
     private By draft = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[3]/a[1]/div/div[2]/span");
     private By schedule = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[3]/a[2]/div/div[2]/span");
     private By appointment = By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/ul[3]/a[2]/div/div[2]/span");
@@ -35,8 +35,86 @@ public class UniversityStarPage {
         if(element.isEnabled()){
             element.click();
         }
-
     }
+
+    public UniProfilePage GetProfile(){
+
+        return new UniProfilePage(driver);
+    }
+
+    public void clickDiscovery(){
+        WebElement element=driver.findElement(discovery);
+        if(element.isEnabled())
+            element.click();
+    }
+
+    public void clickSubscription(){
+        WebElement element=driver.findElement(subscription);
+        if(element.isEnabled())
+            element.click();
+    }
+
+    public  void clickFavorites(){
+        WebElement element=driver.findElement(favorites);
+        if (element.isEnabled())
+            element.click();
+    }
+
+    public void clickAllPosts(){
+        WebElement element=driver.findElement(allposts);
+        if(element.isEnabled())
+            element.click();
+    }
+
+
+
+    public void clickDraft(){
+        WebElement element=driver.findElement(draft);
+        if(element.isEnabled())
+            element.click();
+    }
+    public void clickAppointment(){
+        WebElement element=driver.findElement(appointment);
+        if(element.isEnabled())
+            element.click();
+    }
+
+    public void clickFollowers(){
+        WebElement element=driver.findElement(followers);
+        if(element.isEnabled())
+            element.click();
+    }
+
+    public void clickComments(){
+        WebElement element=driver.findElement(comments);
+        if(element.isEnabled())
+            element.click();
+    }
+
+    public void clickPayment(){
+        WebElement element=driver.findElement(payment);
+        if(element.isEnabled())
+            element.click();
+    }
+    public void clickSchedule(){
+        WebElement element=driver.findElement(schedule);
+        if(element.isEnabled())
+            element.click();
+    }
+    public void clickRedeem(){
+        WebElement element=driver.findElement(redeem);
+        if(element.isEnabled())
+            element.click();
+    }
+
+    public void clickPassword(){
+        WebElement element=driver.findElement(password);
+        if(element.isEnabled())
+            element.click();
+    }
+
+
+
     public String getTitle(){
         WebElement element=driver.findElement(title);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
@@ -54,11 +132,13 @@ public class UniversityStarPage {
     }
 
     public CreateNewPostPage clickNewPost(){
-        WebElement element = driver.findElement(createNewPost);
+        WebElement element = driver.findElement(createnewpost);
         if (element.isEnabled()){
             element.click();
         }
         return new CreateNewPostPage(driver);
     }
+
+
 
 }

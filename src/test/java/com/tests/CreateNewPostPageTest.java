@@ -1,5 +1,6 @@
 package com.tests;
 
+import com.aventstack.extentreports.Status;
 import com.vsysq.base.ExtentTestManager;
 import com.vsysq.base.TestBase;
 import com.vsysq.pages.BasePage;
@@ -32,7 +33,7 @@ public class CreateNewPostPageTest extends TestBase {
     public void checkPage(){
         basePage = new BasePage(driver);
         signInPage = basePage.clickSignInBtn();
-        ExtentTestManager.getTest().createNode("Sign in with wrong password");
+
         String username = "info@madoor.com";
         String password = "Madoor107!";
         usp = signInPage.SignInUstar(username,password);
@@ -47,7 +48,7 @@ public class CreateNewPostPageTest extends TestBase {
 
         } catch(Exception exc){
         }
-        ExtentTestManager.getTest().createNode("Sign In Title");
+        ExtentTestManager.getTest().log(Status.INFO, "Verify the heading function on CreateNewPostPage");
         Assert.assertTrue(cnpp.checkHeading(), "heading doesn't work");
     }
 }

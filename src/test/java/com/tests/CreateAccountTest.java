@@ -1,5 +1,6 @@
 package com.tests;
 
+import com.aventstack.extentreports.Status;
 import com.vsysq.base.ExtentTestManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -28,6 +29,7 @@ public class CreateAccountTest extends TestBase {
         basePage = new BasePage(driver);
         signInPage = basePage.clickSignInBtn();
         createAccountPage = signInPage.clickonCreateAnAccount();
+        ExtentTestManager.getTest().log(Status.INFO, "Verify Sign Up on the SignIn Page");
         Assert.assertTrue(createAccountPage.verifyPageTitle(), "Page title not matching");
 
     }
@@ -39,12 +41,9 @@ public class CreateAccountTest extends TestBase {
         String username="info@madoor.com";
         String password="Edd123456";
         String password2="Edd123456";
-        ExtentTestManager.getTest().createNode("Test User already exists function for sign up");
+        ExtentTestManager.getTest().log(Status.INFO, "Verify Create account on Home Page");
         Assert.assertTrue(createAccountPage.verifySignUp(username,password,password2),"The sign up is not functional");
     }
 
-//    @Test
-//    public void createAccountExample2() {
-//        System.out.println("Hey im in Example2 test");
-//    }
+
 }
